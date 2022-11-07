@@ -2,7 +2,7 @@ import $ from "jquery";
 
 let gold = 0;
 let equips = ["stick"];
-let huntInterval = 1;
+let huntInterval = 20;
 let chanceIndex = 0;
 let catchCount = 0;
 
@@ -96,8 +96,6 @@ const winCheck = () => {
     }
 };
 
-//WIN CONDITION BUG - ?m9 not considered?
+//WIN CONDITION BUG
 //CHANGE ALERT TO DIALOG BOX
-//ADD BACKGROUND AND IMAGES
 //TOOLTIP FOR EQS & MONSTERS
-//START PAGE WITH README
