@@ -2,17 +2,18 @@ import $ from "jquery";
 
 let gold = 0;
 let equips = ["stick"];
-let huntInterval = 3;
+let huntInterval = 1;
 let chanceIndex = 0;
+let catchCount = 0;
 
 const shopItems = [
   { name: "charm", price: 500, chanceIndex: 1 },
   { name: "amulet", price: 999, chanceIndex: 2 },
 ];
 const monsters = [
-  [{name: 1, gold: 10, index: '#m1'}, {name: 2, gold: 20, index: '#m2'}, {name: 3, gold: 30, index: '#m3'}, {name: 4, gold: 40, index: '#m4'}],
-  [{name: 4, gold: 40, index: '#m4'}, {name: 5, gold: 50, index: '#m5'}, {name: 6, gold: 60, index: '#m6'},{name: 7, gold: 70, index: '#m7'}],
-  [{name: 7, gold: 70, index: '#m7'}, {name: 8, gold: 80, index: '#m8'}, {name: 9, gold: 90, index: '#m9'},{name: 10, gold: 100, index: '#m10'}]
+  [{name: "Dong", gold: 10, index: '#m1', story: "Dong is just a passerby.."}, {name: "Booger", gold: 20, index: '#m2'}, {name: "Stone Ghoul", gold: 30, index: '#m3'}, {name: "Mutated Ant", gold: 40, index: '#m4'}],
+  [{name: "Mutated Ant", gold: 40, index: '#m4'}, {name: "Ugly Spider", gold: 50, index: '#m5'}, {name: "Prince Toad", gold: 60, index: '#m6'},{name: "Slime Worm", gold: 70, index: '#m7'}],
+  [{name: "Slime Worm", gold: 70, index: '#m7'}, {name: "Cyborg Cubone", gold: 80, index: '#m8'}, {name: "Horny Pork", gold: 90, index: '#m9'},{name: "Dragon King", gold: 100, index: '#m10'}]
 ];
 
 const shopToggle = $("#shopButton").on("click", () => {
@@ -37,9 +38,11 @@ const countDown = () => {
 const catchResult = () => {
     const randomIndex = Math.floor(Math.random() * monsters[0].length);
     let thisCatch = monsters[chanceIndex][randomIndex];
-    $('#result').text(`${thisCatch.name}`);//or img w400h230
-    $('#text').text(`You caught a ${thisCatch.name}! Gold +$${thisCatch.gold}`)
+    catchCount += 1;
     gold += thisCatch.gold;
+    $('#count').text(`${catchCount}`);//or img w400h230
+    $('#text').text(`You caught a ${thisCatch.name}! Gold +$${thisCatch.gold}`)
+    $('#story').text(thisCatch.story);
     $('#gold').text(gold);
     $(thisCatch.index).css("visibility", "visible");
     winCheck();
