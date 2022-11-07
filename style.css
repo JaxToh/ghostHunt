@@ -1,1 +1,154 @@
+body {
+  background-image: url("https://i.imgur.com/DoOoleJ.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1150px;
+  max-height: 700px;
+  background-color: azure;
+  padding: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 250px;
+}
 
+h1 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 70px;
+  text-decoration:overline;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 15px;
+}
+
+div {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+  display: block;
+  cursor: pointer;
+}
+
+#hunt {
+  text-align: center;
+  font-size: 25px;
+}
+
+#countDown {
+  font-size: 70px;
+  color: rgb(25, 215, 25);
+}
+
+#huntButton {
+  background-color: rgb(214, 142, 17);
+  font-size: 50px;
+  padding:10px;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-top: 10px;
+  visibility: visible;
+}
+
+#shop {
+  visibility: hidden;
+  width: 280px;
+  height: 230px;
+  color: azure;
+  font-size: 20px;
+  background-color: rgba(193, 224, 243, 0.1);
+  border: 1px solid grey;
+  padding: 20px;
+}
+
+#shopButton {
+  background-color: rgb(214, 142, 17);
+  font-size: 20px;
+  padding:10px;
+  border-radius: 10px;
+}
+
+#equips {
+  color: azure;
+  font-size: 20px;
+  background-color: rgba(193, 224, 243, 0.1);
+  empty-cells: show;
+  border: 1px solid grey;
+  table-layout: fixed;
+  width: 400px;
+  height: 100px;
+}
+
+#captures {
+  color: azure;
+  font-size: 20px;
+  background-color: rgba(210, 240, 210, 0.1);
+  empty-cells: show;
+  border: 1px solid grey;
+  table-layout: fixed;
+  width: 1100px;
+  height: 100px;
+}
+
+th, td {
+  border: 1px solid grey;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+}
+
+td {
+  visibility: hidden;
+}
+
+#e0 {
+  visibility: visible;
+}
+
+#gold {
+  font-size: 40px;
+  color: goldenrod;
+}
+
+#goldicon {
+  font-size: 40px;
+  color: goldenrod;
+}
+
+#result {
+  width: 400px;
+  height: 230px;
+  border: 1px solid red;
+  font-size: 25px;
+  padding: 10px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 350px;
+}
+
+#items {
+  margin: auto;
+  margin-top: 20px;
+}
+
+#text {
+  width: 408px;
+  height: 20px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+#charm {
+  background-color: goldenrod;
+  height: 30px;
+  width: 100px;
+  font-size: 19px;
+}
+
+#amulet {
+  background-color: goldenrod;
+  height: 30px;
+  width: 100px;
+  font-size: 19px;
+}
