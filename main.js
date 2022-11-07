@@ -2,7 +2,7 @@ import $ from "jquery";
 
 let gold = 0;
 let equips = ["stick"];
-let huntInterval = 20;
+let huntInterval = 10;
 let chanceIndex = 0;
 let catchCount = 0;
 
@@ -11,9 +11,9 @@ const shopItems = [
   { name: "amulet", price: 999, chanceIndex: 2 },
 ];
 const monsters = [
-  [{name: "Dong", gold: 10, index: '#m1', story: "Dong is just a passerby.."}, {name: "Booger", gold: 20, index: '#m2'}, {name: "Stone Ghoul", gold: 30, index: '#m3'}, {name: "Mutated Ant", gold: 40, index: '#m4'}],
-  [{name: "Mutated Ant", gold: 40, index: '#m4'}, {name: "Ugly Spider", gold: 50, index: '#m5'}, {name: "Prince Toad", gold: 60, index: '#m6'},{name: "Slime Worm", gold: 70, index: '#m7'}],
-  [{name: "Slime Worm", gold: 70, index: '#m7'}, {name: "Cyborg Cubone", gold: 80, index: '#m8'}, {name: "Horny Pork", gold: 90, index: '#m9'},{name: "Dragon King", gold: 100, index: '#m10'}]
+  [{name: "Dong", gold: 10, index: '#m1', story: "Dong is just a friendly passerby.."}, {name: "Booger", gold: 20, index: '#m2', story:"Booger has many boogers."}, {name: "Stone Ghoul", gold: 30, index: '#m3', story: "He has a friend who is a friend of Thor."}, {name: "Mutated Ant", gold: 40, index: '#m4', story: "They are everywhere! eeks!"}],
+  [{name: "Mutated Ant", gold: 40, index: '#m4', story: "They are everywhere! eeks!"}, {name: "Ugly Spider", gold: 50, index: '#m5', story:"Once not so ugly."}, {name: "Prince Toad", gold: 60, index: '#m6', story:"A toad is still a toad. Ugly."},{name: "Slime Wormy", gold: 70, index: '#m7', story:"from the dev: He used to be my friend.. until he ego :)"}],
+  [{name: "Slime Wormy", gold: 70, index: '#m7', story:"from the dev: He used to be my friend.. until he ego :)"}, {name: "Cyborg Cubone", gold: 80, index: '#m8', story:"In Pokemon, they catch'em all too."}, {name: "Horny Pork", gold: 90, index: '#m9', story:"What a name."},{name: "Dragon King", gold: 100, index: '#m10', story:"The Final Boss."}]
 ];
 
 const shopToggle = $("#shopButton").on("click", () => {
@@ -91,11 +91,20 @@ const buyAmulet = $('#amulet').on("click", () => {
 })
 
 const winCheck = () => {
-    if( $('#m1').css("visibility") && $('#m2').css("visibility") && $('#m3').css("visibility") && $('#m4').css("visibility") && $('#m5').css("visibility") && $('#m6').css("visibility") && $('#m7').css("visibility") && $('#m8').css("visibility") && $('#m9').css("visibility") && $('#m10').css("visibility") === "visible") {
+    if(($('#m1').css("visibility"))  === "visible" && 
+    ($('#m2').css("visibility"))  === "visible" && 
+    ($('#m3').css("visibility"))  === "visible" && 
+    ($('#m4').css("visibility"))  === "visible" && 
+    ($('#m5').css("visibility"))  === "visible" && 
+    ($('#m6').css("visibility"))  === "visible" && 
+    ($('#m7').css("visibility"))  === "visible" && 
+    ($('#m8').css("visibility"))  === "visible" &&
+    ($('#m9').css("visibility"))  === "visible" && 
+    ($('#m10').css("visibility")) === "visible") {
         alert("Congratulations! You caught them all! Refresh to restart.")
     }
 };
 
-//WIN CONDITION BUG
+//BUY & SELL ITEMS
 //CHANGE ALERT TO DIALOG BOX
 //TOOLTIP FOR EQS & MONSTERS
