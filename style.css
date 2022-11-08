@@ -1,13 +1,12 @@
 body {
-  background-image: url("https://i.imgur.com/DoOoleJ.jpg");
+  background-image: url("https://i.imgur.com/DoOoleJ.jpg"); 
   background-size: cover;
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 1150px;
-  max-height: 700px;
+  max-width: 1150px; /*2048 × 1505*/
+  max-height: 750px;
   background-color: azure;
   padding: 20px;
-  display: block;
   margin: 0 auto;
   margin-bottom: 250px;
 }
@@ -61,8 +60,8 @@ button {
   height: 230px;
   color: azure;
   font-size: 20px;
-  background-color: rgba(193, 224, 243, 0.1);
-  border: 1px solid grey;
+  background-color: rgb(91, 54, 7);
+  border: 1px solid rgb(214, 142, 17);
   padding: 20px;
 }
 
@@ -110,24 +109,20 @@ td {
   visibility: visible;
 }
 
-#gold {
-  font-size: 40px;
-  color: goldenrod;
-}
-
-#goldicon {
+#gold, #goldicon {
   font-size: 40px;
   color: goldenrod;
 }
 
 #result {
   width: 400px;
-  height: 230px;
+  height: 0px;
   font-size: 20px;
   padding: 10px;
-  position: absolute;
+  position: relative;
   margin-top: 20px;
-  margin-left: 350px;
+  margin: 0 auto;
+  z-index: -1;
 }
 
 #items {
@@ -137,8 +132,8 @@ td {
 
 #text {
   width: 380px;
-  border: 3px solid grey;
   height: 55px;
+  border: 3px solid grey;
   background-color: black;
   font-size: 25px;
   color: white;
@@ -146,14 +141,7 @@ td {
   margin: 10px 0px 10px 0px;
 }
 
-#charm {
-  background-color: goldenrod;
-  height: 30px;
-  width: 100px;
-  font-size: 19px;
-}
-
-#amulet {
+#charm, #amulet {
   background-color: goldenrod;
   height: 30px;
   width: 100px;
@@ -163,4 +151,8 @@ td {
 #story {
   color: rgb(249, 195, 101);
   font-size: 28px;
+}
+
+#i0, #i1 {
+  border: 1px solid rgb(214, 142, 17);
 }

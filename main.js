@@ -1,19 +1,30 @@
 import $ from "jquery";
 
 let gold = 0;
-let equips = ["stick"];
+let equips = [""];
 let huntInterval = 10;
 let chanceIndex = 0;
 let catchCount = 0;
 
 const shopItems = [
-  { name: "charm", price: 500, chanceIndex: 1 },
+  { name: "charm", price: 499, chanceIndex: 1 },
   { name: "amulet", price: 999, chanceIndex: 2 },
 ];
 const monsters = [
-  [{name: "Dong", gold: 10, index: '#m1', story: "Dong is just a friendly passerby.."}, {name: "Booger", gold: 20, index: '#m2', story:"Booger has many boogers."}, {name: "Stone Ghoul", gold: 30, index: '#m3', story: "He has a friend who is a friend of Thor."}, {name: "Mutated Ant", gold: 40, index: '#m4', story: "They are everywhere! eeks!"}],
-  [{name: "Mutated Ant", gold: 40, index: '#m4', story: "They are everywhere! eeks!"}, {name: "Ugly Spider", gold: 50, index: '#m5', story:"Once not so ugly."}, {name: "Prince Toad", gold: 60, index: '#m6', story:"A toad is still a toad. Ugly."},{name: "Slime Wormy", gold: 70, index: '#m7', story:"from the dev: He used to be my friend.. until he ego :)"}],
-  [{name: "Slime Wormy", gold: 70, index: '#m7', story:"from the dev: He used to be my friend.. until he ego :)"}, {name: "Cyborg Cubone", gold: 80, index: '#m8', story:"In Pokemon, they catch'em all too."}, {name: "Horny Pork", gold: 90, index: '#m9', story:"What a name."},{name: "Dragon King", gold: 100, index: '#m10', story:"The Final Boss."}]
+  [{name: "Dong", gold: 10, index: '#m1', story: "Dong is just a friendly passerby.."},
+   {name: "Booger", gold: 30, index: '#m2', story:"Booger has many boogers."},
+   {name: "Stone Ghoul", gold: 45, index: '#m3', story: "He has a friend who is a friend of Thor."},
+   {name: "Mutated Ant", gold: 60, index: '#m4', story: "They are everywhere! eeks!"}],
+
+  [{name: "Mutated Ant", gold: 60, index: '#m4', story: "They are everywhere! eeks!"},
+   {name: "Ugly Spider", gold: 85, index: '#m5', story:"Once not so ugly."},
+   {name: "Prince Toad", gold: 100, index: '#m6', story:"A toad is still a toad. Ugly."},
+   {name: "Slime Wormy", gold: 125, index: '#m7', story:"Green glowing worm with a stick. Fierce."}],
+
+  [{name: "Slime Wormy", gold: 125, index: '#m7', story:"Green glowing worm stick. Fierce."},
+   {name: "Cyborg Cubone", gold: 150, index: '#m8', story:"In Pokemon, they catch'em all too."},
+   {name: "Horny Pork", gold: 180, index: '#m9', story:"What a name."},
+   {name: "Dragon King", gold: 210, index: '#m10', story:"The Final Boss."}]
 ];
 
 const shopToggle = $("#shopButton").on("click", () => {
