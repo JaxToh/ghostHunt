@@ -3,12 +3,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 1150px; /*2048 × 1505*/
-  max-height: 750px;
-  background-color: azure;
+  max-width: 1050px;
   padding: 20px;
   margin: 0 auto;
-  margin-bottom: 250px;
 }
 
 h1 {
@@ -18,11 +15,7 @@ h1 {
   text-align: center;
   text-decoration: underline;
   margin-top: 15px;
-}
-
-h2 {
-  text-align: center;
-  color: white;
+  height: 50px;
 }
 
 div {
@@ -34,42 +27,112 @@ button {
   cursor: pointer;
 }
 
-#hunt {
-  text-align: center;
-  font-size: 25px;
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes flash {
+  0%, 50%, 100% {
+     opacity: 1;
+  }
+  25%, 75% {
+     opacity: 0;
+  }
+}
+
+.flash {
+  animation-name: flash;
+}
+
+/* span {
+  animation-direction: ;
+} */
 
 #countDown {
   font-size: 70px;
   color: rgb(25, 215, 25);
 }
 
+#hunt {
+  text-align: center;
+  font-size: 25px;
+}
+
 #huntButton {
-  background-color: rgb(214, 142, 17);
+  color: black;
+  background-color: rgb(236, 153, 9);
   font-size: 50px;
+  font-weight: bold;
   padding:20px;
   border-radius: 15px;
   margin: 0 auto;
   margin-top: 10px;
   visibility: visible;
 }
+#huntButton:hover {
+  background-color: rgb(200, 127, 0);
+  color: rgb(31, 30, 30);
+}
+
+#result {
+  width: 400px;
+  height: 0px;
+  font-size: 20px;
+  padding: 10px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  z-index: -1;
+}
 
 #shop {
   visibility: hidden;
   width: 280px;
-  height: 230px;
+  height: 210px;
   color: azure;
   font-size: 20px;
   background-color: rgb(91, 54, 7);
   border: 1px solid rgb(214, 142, 17);
-  padding: 20px;
+  padding: 15px;
 }
 
 #shopButton {
+  color: black;
   background-color: rgb(214, 142, 17);
   font-size: 20px;
+  font-weight: bold;
   padding:10px;
   border-radius: 10px;
+  transition-duration: 0.4s;
+}
+#shopButton:hover {
+  background-color: rgb(200, 127, 0);
+  color: black;
 }
 
 #equips {
@@ -79,8 +142,8 @@ button {
   empty-cells: show;
   border: 1px solid grey;
   table-layout: fixed;
-  width: 400px;
-  height: 100px;
+  width: 320px;
+  height: 80px;
 }
 
 #captures {
@@ -90,31 +153,36 @@ button {
   empty-cells: show;
   border: 1px solid grey;
   table-layout: fixed;
-  width: 1100px;
-  height: 100px;
-  position: relative;
+  width: 880px;
+  height: 80px;
 }
 
 th, td {
   border: 1px solid grey;
-  color: rgb(91, 54, 7);
-  width: 100px;
-  height: 100px;
-
+  color: white;
+  width: 80px;
+  height: 80px;
 }
 
 th {
+  border: 1px solid rgb(214, 142, 17);
+  width: 100px;
   position: sticky;
   left: 0;
-  background-color: rgba(210, 240, 210, 0.5);
+  background-color: rgb(91, 54, 7);
 }
 
 td {
   visibility: hidden;
-  z-index: 1;;
+  z-index: 1;
+  text-align: right;
+  vertical-align: bottom;
+  font-weight: bold;
 }
 
 #e0 {
+  height: 100px;
+  width: 100px;
   visibility: visible;
 }
 
@@ -123,20 +191,9 @@ td {
   color: goldenrod;
 }
 
-#result {
-  width: 400px;
-  height: 0px;
-  font-size: 20px;
-  padding: 10px;
-  position: relative;
-  margin-top: 20px;
-  margin: 0 auto;
-  z-index: -1;
-}
-
 #items {
   margin: auto;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 #text {
@@ -153,8 +210,17 @@ td {
 #charm, #amulet {
   background-color: goldenrod;
   height: 30px;
-  width: 100px;
+  width: 80px;
   font-size: 19px;
+  font-weight: bold;
+}
+#amulet:hover {
+  background-color: rgb(200, 127, 0);
+  color: black;
+}
+#charm:hover {
+  background-color: rgb(200, 127, 0);
+  color: black;
 }
 
 #story {
@@ -163,7 +229,34 @@ td {
 }
 
 #i0, #i1 {
+  width: 80px;
+  color: black;
   border: 1px solid rgb(214, 142, 17);
+  color: white;
+}
+
+#eqty, #mqty {
+  float: right;
+}
+
+#e1, #e2 {
+  visibility: hidden;
+}
+
+#useCharm, #useAmulet {
+  float: left;
+  height: 20px ;
+  width: 55px;
+  background-color: goldenrod;
+  font-weight: bold;
+}
+#useCharm:hover {
+  background-color: rgb(200, 127, 0);
+  color: black;
+}
+#useAmulet:hover {
+  background-color: rgb(200, 127, 0);
+  color: black;
 }
 
 @media only screen and (max-width: 700px) {

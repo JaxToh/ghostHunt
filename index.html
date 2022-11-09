@@ -9,54 +9,54 @@
   </head>
   <body>
      <h1>Monster Hunter</h1>
-      <h2>-Win the game when you caught all 10 monsters-</h2>
 
      <div id="hunt">You can hunt again in: <span id="countDown"></span></div>
      <button id="huntButton">Hunt</button>
 
     <div id="result">Catch count: <span id="count">0</span>
       <br />
-      <div id="text">Start hunting!</div>
+      <marquee behavior="alternate" id="text">Welcome. Start hunting!</marquee>
       <span id="story"></span>
     </div> 
-    
-    <div id="shop">Purchase extra equips to attract higher level monsters!
+        
+    <div id="shop">Purchase and use extra equips to attract higher level monsters!
       <table id="items">
         <tr>
-          <th id="i0"><img src="https://i.imgur.com/DZczurY.png" height="100" width="100" title="helps catch mid-tier monsters..">Charm<button id="charm">$499</button></th>
-          <th id="i1"><img src="https://i.imgur.com/k93g8xm.png" height="100" width="100" title="helps catch high-tier monsters..">Amulet<button id="amulet">$999</button></th>
+          <th id="i0"><img src="https://i.imgur.com/DZczurY.png" height="80" width="80" title="helps catch mid-tier monsters..">Charm<button class="buyButton" id="charm">$99</button></th>
+          <th id="i1"><img src="https://i.imgur.com/k93g8xm.png" height="80" width="80" title="helps catch high-tier monsters..">Amulet<button class="buyButton" id="amulet">$299</button></th>
         </tr>
       </table>  
     </div>
     <button id="shopButton">Shop</button>
     
-    <div id="goldicon"><strong>$<span id="gold">0</span></strong></div>
+    <div id="goldicon"><strong>$<span id="gold">300</span></strong></div>
+  
+    <table id="equips">
+      <tr>
+        <th>Equips:</th>
+        <td id="e0"><img src="https://i.imgur.com/hsIdogn.png" height="100" width="100" class ="animated fadeIn"></td>
+        <td id="e1"><img src="https://i.imgur.com/DZczurY.png" height="80" width="80"><button id="useCharm">USE 1</button>x<span id="e1qty">0</span></td>
+        <td id="e2"><img src="https://i.imgur.com/k93g8xm.png" height="80" width="80"><button id="useAmulet">USE 1</button>x<span id="e2qty">0</span></td>
+      </tr>
+    </table>
 
-      <table id="equips">
-        <tr>
-          <th>Equips:</th>
-          <td id="e0"><img src="https://i.imgur.com/hsIdogn.png" height="100" width="100"></td>
-          <td id="e1"><img src="https://i.imgur.com/DZczurY.png" height="100" width="100"></td>
-          <td id="e2"><img src="https://i.imgur.com/k93g8xm.png" height="100" width="100"></td>
-        </tr>
-      </table>
-
-      <div style="overflow-x:auto;">
+    <div style="overflow-x:auto;">
       <table id="captures">
         <tr>
           <th>Captures:</th>
-          <td id="m1"><img src="https://i.imgur.com/bV2RLAE.png" height="100" width="100"></td>
-          <td id="m2"><img src="https://i.imgur.com/vL6EucA.png" height="100" width="100"></td>
-          <td id="m3"><img src="https://i.imgur.com/4YGkMzF.png" height="100" width="100"></td>
-          <td id="m4"><img src="https://i.imgur.com/qrZergm.png" height="100" width="100"></td>
-          <td id="m5"><img src="https://i.imgur.com/LNjsGFj.png" height="100" width="100"></td>
-          <td id="m6"><img src="https://i.imgur.com/mLBl9o4.png" height="100" width="100"></td>
-          <td id="m7"><img src="https://i.imgur.com/amWNdUZ.png" height="100" width="100"></td>
-          <td id="m8"><img src="https://i.imgur.com/KarOv20.png" height="100" width="100"></td>
-          <td id="m9"><img src="https://i.imgur.com/5GSXhuk.png" height="100" width="100"></td>
-          <td id="m10"><img src="https://i.imgur.com/YEmQNDu.png" height="100" width="100"></td>
+          <td id="m1">Dong<img src="https://i.imgur.com/bV2RLAE.png" height="80" width="80">x<span id="m1qty">0</span></td>
+          <td id="m2">Booger<img src="https://i.imgur.com/vL6EucA.png" height="80" width="80">x<span id="m2qty">0</span></td>
+          <td id="m3">Stone Ghoul<img src="https://i.imgur.com/4YGkMzF.png" height="80" width="80">x<span id="m3qty">0</span></td>
+          <td id="m4">Mutated Ant<img src="https://i.imgur.com/qrZergm.png" height="80" width="80">x<span id="m4qty">0</span></td>
+          <td id="m5">Ugly Spider<img src="https://i.imgur.com/LNjsGFj.png" height="80" width="80">x<span id="m5qty">0</span></td>
+          <td id="m6">Prince Toad<img src="https://i.imgur.com/mLBl9o4.png" height="80" width="80">x<span id="m6qty">0</span></td>
+          <td id="m7">Slime Wormy<img src="https://i.imgur.com/amWNdUZ.png" height="80" width="80">x<span id="m7qty">0</span></td>
+          <td id="m8">Cyborg Cubone<img src="https://i.imgur.com/KarOv20.png" height="80" width="80">x<span id="m8qty">0</span></td>
+          <td id="m9">Horny Boar<img src="https://i.imgur.com/5GSXhuk.png" height="80" width="80">x<span id="m9qty">0</span></td>
+          <td id="m10">Dragon King<img src="https://i.imgur.com/YEmQNDu.png" height="80" width="80">x<span id="m10qty">0</span></td>
         </tr>
       </table>
     </div>
-    </body>
-</html>
+  </body>
+  </html>
+  
