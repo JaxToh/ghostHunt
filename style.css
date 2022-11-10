@@ -257,6 +257,7 @@ td {
   width: 55px;
   background-color: goldenrod;
   font-weight: bold;
+  text-align: center;
 }
 #useCharm:hover {
   background-color: rgb(200, 127, 0);
@@ -282,7 +283,7 @@ td {
 
   h2 {
     font-size: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
 
   #hunt {
@@ -296,6 +297,7 @@ td {
   #result {
     font-size: 15px;
     width: 300px;
+    margin-top: 20px;
   }
   
   #text {
@@ -306,19 +308,19 @@ td {
   }
   
   #story {
-      font-size: 15px;
+    font-size: 15px;
   }
 
   #shop {
-    width: 140px;
-    height: 130px;
+    width: 170px;
+    height: 140px;
     font-size: 12px;
     padding: 5px 10px 0px 10px;
   }
 
   th, td {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 50px;
   }
 
   th {
@@ -332,25 +334,35 @@ td {
 
   #equips {
     font-size: 15px;
-    width: 160px;
-    height: 40px;
+    width: 200px;
+    height: 50px;
   }
   
   #captures {
     font-size: 15px;
-    width: 440px;
-    height: 40px;
+    width: 550px;
+    height: 50px;
   }
 
   img {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
+  }
+
+  #avatar {
+    height:90px;
+    width:90px;
   }
 
   #e0 {
-    vertical-align: top;
-    height: 40px;
-    width: 40px;
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+  }
+
+  #e1, #e2 {
+    vertical-align: middle;
+    text-align: center;
   }
 
   #gold, #goldicon {
@@ -358,23 +370,36 @@ td {
   }
 
   #useCharm, #useAmulet, .sell {
-    height: 20px ;
-    width: 40px;
+    height: 25px ;
+    width: 50px;
     font-size: 10px;
   }
 
   #charm, #amulet {
-    height: 20px;
-    width: 40px;
-    font-size: 12px;
+    height: 25px;
+    width: 50px;
+    font-size: 15px;
+    color: black;
+    text-align: center;
   }
 
   #i0, #i1 {
-    width: 40px;
+    width: 50px;
   }
 
   #items {
-    margin-top: 0px;
+    margin-top: 5px;
+  }
+
+  #useCharm, #useAmulet, .sell {
+    float: left;
+    height: 25px ;
+    width: 55px;
+    background-color: goldenrod;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    font-size: 14px;
   }
 
 }
