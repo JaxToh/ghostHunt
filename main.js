@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 let gold = 300;
-let huntInterval = 9;
+let huntInterval = 3;
 let equips = [];
 let activeItem = "";
 let amuletEffect = 0;
@@ -15,32 +15,17 @@ const shopItems = [
 ];
 
 const monsters = [
-  {name: "Dong", gold: 10, index: '#m1', count: 0, story: "Dong is just a friendly passerby.."},
-  {name: "Booger", gold: 30, index: '#m2', count: 0, story:"Booger has many boogers."},
-  {name: "Stone Ghoul", gold: 45, index: '#m3', count: 0, story: "He has a friend who is a friend of Thor."},
-  {name: "Mutated Ant", gold: 60, index: '#m4', count: 0, story: "They are everywhere! eeks!"},
-  {name: "Ugly Spider", gold: 85, index: '#m5', count: 0, story:"Once not so ugly."},
-  {name: "Prince Toad", gold: 100, index: '#m6', count: 0, story:"A toad is still a toad. Ugly."},
-  {name: "Slime Wormy", gold: 125, index: '#m7', count: 0, story:"Green glowing worm with a stick. Fierce."},
-  {name: "Cyborg Cubone", gold: 150, index: '#m8', count: 0, story:"In Pokemon, they catch'em all too."},
-  {name: "Horny Boar", gold: 180, index: '#m9', count: 0, story:"What a name."},
-  {name: "Dragon King", gold: 210, index: '#m10', count: 0, story:"The Final Boss."}
+  {name: "Dong", gold: 10, price: 5, index: '#m1', count: 0, story: "Dong is just a friendly passerby.. They live in groups of 5-12, usually grazing on stones."},
+  {name: "Booger", gold: 30, price: 5, index: '#m2', count: 0, story:"Booger has many boogers. According to folktales, they were created by a mad sorceror."},
+  {name: "Stone Ghoul", gold: 45, price: 5, index: '#m3', count: 0, story: "He has a friend who is a friend of Thor. They are descended from a lost civilization."},
+  {name: "Mutated Ant", gold: 60, price: 5, index: '#m4', count: 0, story: "They are everywhere! eeks! Their eggs are powerful alchemical ingredients."},
+  {name: "Ugly Spider", gold: 85, price: 5, index: '#m5', count: 0, story:"This tiny arachnoid beast lairs in deep canyons. It attacks with dizzying blows & venom."},
+  {name: "Prince Toad", gold: 100, price: 10, index: '#m6', count: 0, story:"They are not always violent, and sometimes merely play tricks on the unwary."},
+  {name: "Slime Wormy", gold: 125, price: 10, index: '#m7', count: 0, story:"Angsty green glowing worm with a stick. It seems to brighten up when closer to metals.."},
+  {name: "Cyborg Cubone", gold: 150, price: 10, index: '#m8', count: 0, story:"In Pokemon, they catch'em all too. But this guy could have went through the multiverse."},
+  {name: "Horny Boar", gold: 180, price: 20, index: '#m9', count: 0, story:"Once hunted for their horns, they are sometimes kept as pets by evil arcanists. It dislikes certain talismans."},
+  {name: "Dragon King", gold: 210, price: 20, index: '#m10', count: 0, story:"A rarely seen and mysterious dweller in the lair. Local folktales say that they can be negotiated with, though their demands are unusual."}
 ];
-/*
-It is believed that they seek out and attack a particular kind of person.
-According to folktales, they were created by a mad sorceror.
-Rumor holds that they migrate every once in a long while to a place no one has found.
-They are not always violent, and sometimes merely play tricks on the unwary.
-monster lives in places touched by otherworldly power.
-It dislikes certain talismans
-This tiny arachnoid beast lairs in deep canyons. It attacks with dizzying blows & venom
-their eggs are powerful alchemical ingredients.
-they are sometimes kept as pets by evil arcanists.
-they are descended from a lost civilization.
-This towering fiendish creature lairs in places touched by dark powers.
-Local folktales say that they can be negotiated with, though their demands are unusual.
-
-*/
 
 const shopToggle = $("#shopButton").on("click", () => {
   if ($("#shop").css("visibility") === "hidden")
@@ -73,6 +58,10 @@ const catchResult = () => {
         thisCatch = monsters[randomIndex + chanceIndex]};
     catchCount += 1;
     gold += thisCatch.gold;
+    $('#gold').css("color", "rgb(25, 215, 25)");
+    setTimeout(() => {
+        $('#gold').css("color", "goldenrod");
+        }, 1000);
     $('#count').text(`${catchCount}`);
     $('#text').text(`You caught a ${thisCatch.name}! Gold +$${thisCatch.gold}`)
     $('#story').text(thisCatch.story);
@@ -82,7 +71,6 @@ const catchResult = () => {
     $(`${thisCatch.index}qty`).text(thisCatch.count);
     $(`${thisCatch.index}`).addClass("animated flash");
     if (activeItem) {removeActiveItem(activeItem, equips)};
-    console.log(equips);
     amuletEffect = 0;
     charmEffect = 0;
     chanceIndex = 0;
@@ -117,8 +105,10 @@ const removeActiveItem = (value, arr) => {
 
 const huntButton = $("#huntButton").on("click", () => {
     $("#huntButton").css("visibility", "hidden");
-    catchResult();
+    $('#useCharm').text("USE");
+    $('#useAmulet').text("USE");
     countDown();
+    catchResult();
     if (($('#e1qty').text()) === "0") {
         $("#e1").removeClass("animated fadeIn");
         $("#e1").css("visibility", "hidden");
@@ -135,6 +125,10 @@ const buyCharm = $('#charm').on("click", () => {
         gold -= item.price;
         equips.push(item.name);
         $('#gold').text(gold);
+        $('#gold').css("color", "brown");
+        setTimeout(() => {
+            $('#gold').css("color", "goldenrod");
+            }, 500);
         $("#e1").css("visibility", "visible");
         $("#e1").addClass("animated fadeIn");
         $('#text').text(`You purchased a ${item.name}.`)
@@ -147,6 +141,10 @@ const buyCharm = $('#charm').on("click", () => {
 
     } else {
         $('#text').text("You do not have enough gold.");
+        $('#gold').css("color", "grey");
+        setTimeout(() => {
+            $('#gold').css("color", "goldenrod");
+            }, 250);
     }
 })
 
@@ -156,6 +154,10 @@ const buyAmulet = $('#amulet').on("click", () => {
         gold -= item.price;
         equips.push(item.name);
         $('#gold').text(gold);
+        $('#gold').css("color", "brown");
+        setTimeout(() => {
+            $('#gold').css("color", "goldenrod");
+            }, 500);
         $("#e2").css("visibility", "visible");
         $("#e2").addClass("animated fadeIn");
         $('#text').text(`You purchased a ${item.name}.`)
@@ -167,50 +169,89 @@ const buyAmulet = $('#amulet').on("click", () => {
         $('#e2qty').text(counter);
     } else {
         $('#text').text("You do not have enough gold.");
+        $('#gold').css("color", "grey");
+        setTimeout(() => {
+            $('#gold').css("color", "goldenrod");
+            }, 250);
     }
 })
 
 const useCharm = $('#useCharm').on("click", () => {
-    let counter = 0;
-    for (const eq of equips) {
-        if (eq === "charm") {
-            counter++;}
-        };
-    if (counter > 0) {
+    if (activeItem === "" || activeItem === "amulet") {
         $('#e2').css("background-color", "");
         $('#e2').css("color", "white");
         $('#e2').css("font-weight", "");
         $('#e1').css("background-color", "gold");
         $('#e1').css("color", "black");
         $('#e1').css("font-weight", "bold");
+        $('#useCharm').text("cancel");
+        $('#useAmulet').text("USE");
         if (activeItem !== "charm") {
         activeItem = "charm";}
         chanceIndex = shopItems[0].chanceIndex;
-        charmEffect += 2;
+        charmEffect = 2;
+        amuletEffect = 0;
     } else {
-        $('#text').text("You do not have any.");
+        $('#e1').css("background-color", "");
+        $('#e1').css("color", "white");
+        $('#e1').css("font-weight", "");
+        $('#useCharm').text("USE");
+        activeItem = "";
+        chanceIndex = 0;
+        charmEffect = 0;
     }
 });
 
 const useAmulet = $('#useAmulet').on("click", () => {
-    let counter = 0;
-    for (const eq of equips) {
-        if (eq === "amulet") {
-            counter++;}
-        };
-    if (counter > 0) {
+    if (activeItem === "" || activeItem === "charm") {
         $('#e1').css("background-color", "");
         $('#e1').css("color", "white");
         $('#e1').css("font-weight", "");
         $('#e2').css("background-color", "gold");
         $('#e2').css("color", "black");
         $('#e2').css("font-weight", "bold");
+        $('#useCharm').text("USE");
+        $('#useAmulet').text("cancel");
         if (activeItem !== "amulet") {
             activeItem = "amulet";}
         chanceIndex = shopItems[1].chanceIndex;
-        amuletEffect += 4;
+        charmEffect = 0;
+        amuletEffect = 4;
     } else {
-        $('#text').text("You do not have any.");
+        $('#e2').css("background-color", "");
+        $('#e2').css("color", "white");
+        $('#e2').css("font-weight", "");
+        $('#useAmulet').text("USE");
+        activeItem = "";
+        chanceIndex = 0;
+        amuletEffect = 0;
+    }
+});
+
+const sellMonster = $('.sell').on("click", (e) =>{
+     let soldMonster = monsters[e.target.id];
+     if (soldMonster.count > 1) {
+     soldMonster.count -= 1;
+     gold += soldMonster.price;
+     $('#gold').text(gold);
+     $('#gold').css("color", "rgb(25, 215, 25)");
+     $(`${soldMonster.index}qty`).text(soldMonster.count);
+     $(`${soldMonster.index}`).css("background-color", "rgb(25, 215, 25)");
+     $(`${soldMonster.index}`).css("color", "black");
+        setTimeout(() => {
+        $(`${soldMonster.index}`).css("background-color", "");
+        $(`${soldMonster.index}`).css("color", "white");
+        $('#gold').css("color", "goldenrod");
+        }, 500);
+     $("#text").text(`You sold a ${soldMonster.name}. +$${soldMonster.price}.`);
+    } else {
+    $(`${soldMonster.index}`).css("background-color", "grey");
+    $('#gold').css("color", "grey");
+        setTimeout(() => {
+        $(`${soldMonster.index}`).css("background-color", "");
+            $('#gold').css("color", "goldenrod");
+        }, 250);
+     $("#text").text("You cannot sell the last one of each.");
     }
 });
 
@@ -225,12 +266,10 @@ function winCheck() {
         ($('#m8').css("visibility")) === "visible" &&
         ($('#m9').css("visibility")) === "visible" &&
         ($('#m10').css("visibility")) === "visible") {
-        alert("Congratulations! You caught them all! Refresh to restart.")
+        alert("Congratulations! You have caught them all! Refresh to restart.")
     }
 }
 
-//MONSTERS DESCRIPTIONS
-//DESELECT EQUIPS USE
-//CHANGE ALERT TO DIALOG BOX
-//TOOLTIP FOR EQS & MONSTERS
+
 //README
+//CLEANUP CODES/ REMOVE HARD CODES -> USE MVC UPDATE() AND RENDER()

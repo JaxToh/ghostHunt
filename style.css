@@ -1,11 +1,9 @@
 body {
   background-image: url("https://i.imgur.com/DoOoleJ.jpg"); 
   background-size: cover;
-  background-repeat: no-repeat;
-  background-size: cover;
-  max-width: 1050px;
+  background-position: center;
   padding: 20px;
-  margin: 0 auto;
+  max-width: 2048px;
 }
 
 h1 {
@@ -14,8 +12,7 @@ h1 {
   text-decoration:overline;
   text-align: center;
   text-decoration: underline;
-  margin-top: 15px;
-  height: 50px;
+
 }
 
 h2 {
@@ -23,7 +20,7 @@ h2 {
   text-align: center;
   font-size: 20px;
   font-weight: lighter;
-  margin-bottom: 90px;
+  margin-bottom: 30px;
 }
 
 
@@ -78,10 +75,6 @@ button {
   animation-name: flash;
 }
 
-/* span {
-  animation-direction: ;
-} */
-
 #countDown {
   font-size: 70px;
   color: rgb(25, 215, 25);
@@ -128,6 +121,7 @@ button {
   background-color: rgb(91, 54, 7);
   border: 1px solid rgb(214, 142, 17);
   padding: 15px;
+  margin: auto;
 }
 
 #shopButton {
@@ -138,6 +132,7 @@ button {
   padding:10px;
   border-radius: 10px;
   transition-duration: 0.4s;
+  margin: auto;
 }
 #shopButton:hover {
   background-color: rgb(200, 127, 0);
@@ -153,6 +148,7 @@ button {
   table-layout: fixed;
   width: 320px;
   height: 80px;
+  margin: auto;
 }
 
 #captures {
@@ -164,6 +160,7 @@ button {
   table-layout: fixed;
   width: 880px;
   height: 80px;
+  margin: auto;
 }
 
 th, td {
@@ -198,6 +195,7 @@ td {
 #gold, #goldicon {
   font-size: 40px;
   color: goldenrod;
+  text-align: center;
 }
 
 #items {
@@ -235,6 +233,7 @@ td {
 #story {
   color: rgb(249, 195, 101);
   font-size: 28px;
+  font-style: italic;
 }
 
 #i0, #i1 {
@@ -252,7 +251,7 @@ td {
   visibility: hidden;
 }
 
-#useCharm, #useAmulet {
+#useCharm, #useAmulet, .sell {
   float: left;
   height: 20px ;
   width: 55px;
@@ -272,9 +271,110 @@ td {
 
   body {
     background-image: url("https://i.imgur.com/DoOoleJ.jpg"); 
-    background-size: cover;
-    max-width: 700px;
-    max-height: 950px;
+    background-size: 2048px 1505px;
+    background-position: center;
+  }
+
+  h1 {
+    font-size: 40px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  #hunt {
+    font-size: 20px;
+  }
+
+  #huntButton {
+    font-size: 40px;
+  }
+
+  #result {
+    font-size: 15px;
+    width: 300px;
+  }
+  
+  #text {
+    font-size: 18px;
+    width: 280px;
+    height: 20px;
+    display: block;
+  }
+  
+  #story {
+      font-size: 15px;
+  }
+
+  #shop {
+    width: 140px;
+    height: 130px;
+    font-size: 12px;
+    padding: 5px 10px 0px 10px;
+  }
+
+  th, td {
+    width: 40px;
+    height: 40px;
+  }
+
+  th {
+    height: 70px;
+    width: 70px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  #equips {
+    font-size: 15px;
+    width: 160px;
+    height: 40px;
+  }
+  
+  #captures {
+    font-size: 15px;
+    width: 440px;
+    height: 40px;
+  }
+
+  img {
+    height: 40px;
+    width: 40px;
+  }
+
+  #e0 {
+    vertical-align: top;
+    height: 40px;
+    width: 40px;
+  }
+
+  #gold, #goldicon {
+    font-size: 30px;
+  }
+
+  #useCharm, #useAmulet, .sell {
+    height: 20px ;
+    width: 40px;
+    font-size: 10px;
+  }
+
+  #charm, #amulet {
+    height: 20px;
+    width: 40px;
+    font-size: 12px;
+  }
+
+  #i0, #i1 {
+    width: 40px;
+  }
+
+  #items {
+    margin-top: 0px;
   }
 
 }
