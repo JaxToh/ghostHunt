@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 let gold = 0;
-let huntInterval = 9;
+let huntInterval = 5;
 let equips = [];
 let activeItem = "";
 let amuletEffect = 0;
